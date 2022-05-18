@@ -33,7 +33,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.listBoxInput = new System.Windows.Forms.ListBox();
             this.listBoxResult = new System.Windows.Forms.ListBox();
-            this.labeText = new System.Windows.Forms.Label();
+            this.labelText = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // encryptButton
@@ -78,21 +78,22 @@
             this.listBoxResult.Size = new System.Drawing.Size(270, 244);
             this.listBoxResult.TabIndex = 4;
             // 
-            // labeText
+            // labelText
             // 
-            this.labeText.AutoSize = true;
-            this.labeText.Location = new System.Drawing.Point(85, 87);
-            this.labeText.Name = "labeText";
-            this.labeText.Size = new System.Drawing.Size(112, 15);
-            this.labeText.TabIndex = 5;
-            this.labeText.Text = "ENCRYPT/DECRUPT";
+            this.labelText.AutoSize = true;
+            this.labelText.Location = new System.Drawing.Point(85, 87);
+            this.labelText.Name = "labelText";
+            this.labelText.Size = new System.Drawing.Size(112, 15);
+            this.labelText.TabIndex = 5;
+            this.labelText.Text = "ENCRYPT/DECRUPT";
+            this.labelText.Click += new System.EventHandler(this.labeText_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1188, 589);
-            this.Controls.Add(this.labeText);
+            this.Controls.Add(this.labelText);
             this.Controls.Add(this.listBoxResult);
             this.Controls.Add(this.listBoxInput);
             this.Controls.Add(this.decryptButton);
@@ -111,6 +112,6 @@
         private OpenFileDialog openFileDialog1;
         private ListBox listBoxInput;
         private ListBox listBoxResult;
-        private Label labeText;
+        private Label labelText;
     }
 }
