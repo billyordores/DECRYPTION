@@ -9,6 +9,8 @@ namespace EncryptionAlgorithms
 {
     public partial class Form1 : Form
     {
+        public static OpenFileDialog openFileDialogClave = new OpenFileDialog();
+        public static OpenFileDialog openFileDialogTexto = new OpenFileDialog();
         public Form1()
         {
             InitializeComponent();
@@ -16,86 +18,125 @@ namespace EncryptionAlgorithms
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            string text = System.IO.File.ReadAllText(@"C:/Users/becario/Pictures/Documentos/Criptografia y seguridad/Archivo de texto encriptado.txt");
-            //string text = "ZDA3dzNpMnJTVG0yQ3FQS25RUFBIV0tLWjVrNHlqQi9oM3hTVFFRdWxsbnRMcU1tQzdGb2E5RW82a0FRSTJxODVpYWp5Nkhzc2hGWXBRcVNVN0FIWnRhU24wVnBxL1F2cE5lZXBxdm9qYm52YnFndnRqVEJnSzU5bzNjeHJRU2ptTVFYanYwYWlmektaSmhnZ3R1MTNKMlBrZlBKVzJzUzVUQzNBT3NVUlJ3PQ==";
-            listBoxInput.Items.Add(text);
-
-            dataTreatment.loadData();
-
             
             try 
             {
-                byte[] dataEncrypted = Encoding.UTF8.GetBytes(text);
-                CspParameters csp = new CspParameters();    
-                RSAParameters rsaP = new RSAParameters();
-
-                 rsaP.Modulus = Convert.FromBase64String(dataTreatment.getKeyByName("Modulus"));
-                 rsaP.Exponent = Convert.FromBase64String(dataTreatment.getKeyByName("Exponent"));
-                 rsaP.P = Convert.FromBase64String(dataTreatment.getKeyByName("P"));
-                 rsaP.Q = Convert.FromBase64String(dataTreatment.getKeyByName("Q"));
-                 rsaP.DP = Convert.FromBase64String(dataTreatment.getKeyByName("DP"));
-                 rsaP.DQ = Convert.FromBase64String(dataTreatment.getKeyByName("DQ"));
-                 rsaP.InverseQ = Convert.FromBase64String(dataTreatment.getKeyByName("InverseQ"));
-                 rsaP.D = Convert.FromBase64String(dataTreatment.getKeyByName("D"));
-                /** rsaP.Modulus = Convert.FromBase64String("t3wHJ20FIxJLF862VXhdJVKJBrNuPHYzNgVEoplwaqZCXg85Y1UBcWsLFo2z2Kw2+inuFQq7i0nWPc5HdbsarJO4QMl6+p8QO4vggvRe/LyOLu2F9woSy22jcCywN7UM8cX5aKcVy5eKYjRXtCarda1gQAp4+JH/y3KsQYwOkP0=");
-                 rsaP.Exponent = Convert.FromBase64String("AQAB");
-                 rsaP.P = Convert.FromBase64String("7JpuVJ4+3ZH4L8Q4DywYw4R7MphshRx39Nkb1dI3y9lGmDWtC4DY9MsuE5FeUNbyM1hizusubCtTECv6PV3Q2w==");
-                 rsaP.Q = Convert.FromBase64String("xobMenFpgAaWP9eZsHPm4g7tMDe66hg9gLEpB1ClsYt7WNyjsjAqjNAcyOrOEmDct2cr+nz51Wu5YPkWRxcBBw==");
-                 rsaP.DP = Convert.FromBase64String("Vr8YDHYoXlwSPpEWbJmiSqzb7mTsBLG3WVHwXqjAREDZHR0w4LLQ2I9VyV7W0ZS9IA4by/l1/7qyrY8yJCWtWQ==");
-                 rsaP.DQ = Convert.FromBase64String("p3PmH9VvppRnwXvq38IzWjQ67rPjTjeaEOXd9JSa3jIHncGltdQY3+NelD4yCaB4K56zorotxU3y9I/Fsbr+mw==");
-                 rsaP.InverseQ = Convert.FromBase64String("ssbEa+0/f0XuO19mhcuO0U+tTYwjR9tFNBL2rjXlVkQsv8jnqAY22oZwwEK6vgqd+qaDTFtbc5qxIwqGKaqvqA==");
-                 rsaP.D = Convert.FromBase64String("qEYPKZFKTMfSJptljS09/6SaFpMoXjro7HoYYCboembQJwM/VmH3WNUa7iw27FfEc9lQh+u35B5rZXNxBf/6jQw8dTccheuUniZ2uS3ump4gj0VXSHZ3hx5pttbWhA7XKEbRSZS64OV8yKPCqdgOkLmeNfG+Qc38wm/cVJLr5eE=");**/
-
-                
-
-                byte[] encryptedData  = System.Text.UTF8Encoding.UTF8.GetBytes(text);
-                 
-                RSADecrypt(encryptedData, rsaP, false);
-
-                //labelText.Text = encryptedData.Length.ToString();
-
-            } catch (Exception E) { labelText.Text = E.Message; }
+                if (comboBoxAlgo.Text =="RSA" && comboBoxED.Text=="Desencriptar") {
+                    using (var sr = new StreamReader(openFileDialogClave.OpenFile()))
+                    {
+                        XDocument doc = new XDocument();
+                        doc = XDocument.Parse(sr.ReadToEnd().Replace("&lt;", "<").Replace("&gt;", ">"));
+                        using (var sr2 = new StreamReader(openFileDialogTexto.OpenFile()))
+                        {
+                            RSAd rsa = new RSAd(doc, sr2.ReadToEnd());
+                            listBoxResult.Items.Add(rsa.decrypt());
+                        }
+                    }
+                }
+                else if(comboBoxAlgo.Text == "RSA" && comboBoxED.Text == "Encriptar") 
+                {
+                    if (textBoxTexto.Text == "")
+                    {
+                        textBoxTexto.Text = "Escriba algo el texto a encriptar aquí";
+                    }
+                    else 
+                    {
+                        RSAe rsae = new RSAe(textBoxTexto.Text);
+                        listBoxResult.Items.Add(rsae.Encrypt());
+                    }
+                                  
+                }
+                else {
+                    labelToE.Text = "Error seleccione el algoritmo";
+                }
+            } 
+            catch (Exception E) { labelToE.Text = "Error revise bien las selecciones"; }
 
         }
 
         private void listBoxInput_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            listBoxResult.HorizontalScrollbar = true;
         }
 
         private void labeText_Click(object sender, EventArgs e)
         {
 
         }
-        public void RSADecrypt(byte[] DataToDecrypt, RSAParameters RSAKeyInfo, bool DoOAEPPadding)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                CspParameters csp = new CspParameters(1, "Schlumberger Cryptographic Service Provider");
-                csp.Flags = CspProviderFlags.UseArchivableKey;
-                byte[] decryptedData;
-                //Create a new instance of RSACryptoServiceProvider.
-                using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
-                {
-                    //Import the RSA Key information. This needs
-                    //to include the private key information.
-                    RSA.ImportParameters(RSAKeyInfo);
-                    
-                    //Decrypt the passed byte array and specify OAEP padding.  
-                    //OAEP padding is only available on Microsoft Windows XP or
-                    //later.  
-                    decryptedData = RSA.Decrypt(DataToDecrypt, DoOAEPPadding);
 
-                    //labelText.Text = decryptedData;
-                }
-                
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxED_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxED.Text == "Desencriptar")
+            {
+                buttonCargar1.Visible = true;
+                buttonCargar2.Visible = true;
+                listBoxInput.Visible = true;
             }
-            //Catch and display a CryptographicException  
-            //to the console.
-            catch (CryptographicException e)
+            else {
+                buttonCargar1.Visible = false;
+                buttonCargar2.Visible = false;
+                listBoxInput.Visible = false;
+            }
+            if (comboBoxED.Text == "Encriptar")
             {
-                 labelText.Text = e.Message;
+                textBoxClave.Visible = true;
+                labelTexto.Visible = true;
+                labelClave.Visible = true;
+                textBoxTexto.Visible = true;
+            }
+            else {
+                labelTexto.Visible = false;
+                textBoxClave.Visible= false;
+                labelClave.Visible = false;
+                textBoxTexto.Visible = false;
+            }
+        }
 
+        private void listBoxResult_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listBoxResult.HorizontalScrollbar = true;
+        }
+
+        private void buttonCargar1_Click(object sender, EventArgs e)
+        {
+            openFileDialogClave.Filter = "Archivo de clave capturada (*.xml)|*.xml";
+            if (openFileDialogClave.ShowDialog() == DialogResult.OK)
+            {
+                using (var sr = new StreamReader(openFileDialogClave.OpenFile()))
+                {
+                    XDocument doc = new XDocument();
+                    doc = XDocument.Parse(sr.ReadToEnd().Replace("&lt;", "<").Replace("&gt;", ">"));
+                    listBoxInput.Items.Add("Clave: "+ doc.ToString());
+                }                    
+            }
+            else
+            {
+                listBoxInput.Items.Add("Clave: Se encontro un error al cargar la clave");
+            }
+        }
+
+        private void buttonCargar2_Click(object sender, EventArgs e)
+        {
+            openFileDialogTexto.Filter = "Archivo de clave capturada (*.txt)|*.txt";
+            if (openFileDialogTexto.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamReader sr = new StreamReader(openFileDialogTexto.OpenFile()))
+                {                    
+                    listBoxInput.Items.Add("Texto Encriptado: " + sr.ReadToEnd());
+                }
+            }
+            else 
+            {
+                listBoxInput.Items.Add("Clave: Se encontro un error al cargar el texto");
             }
         }
     }

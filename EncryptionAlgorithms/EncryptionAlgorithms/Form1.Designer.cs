@@ -28,32 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.encryptButton = new System.Windows.Forms.Button();
-            this.decryptButton = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.buttonStart = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.listBoxInput = new System.Windows.Forms.ListBox();
             this.listBoxResult = new System.Windows.Forms.ListBox();
             this.labelText = new System.Windows.Forms.Label();
+            this.comboBoxAlgo = new System.Windows.Forms.ComboBox();
+            this.comboBoxED = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.buttonCargar1 = new System.Windows.Forms.Button();
+            this.textBoxClave = new System.Windows.Forms.TextBox();
+            this.buttonCargar2 = new System.Windows.Forms.Button();
+            this.textBoxTexto = new System.Windows.Forms.TextBox();
+            this.labelTexto = new System.Windows.Forms.Label();
+            this.labelClave = new System.Windows.Forms.Label();
+            this.labelToE = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // encryptButton
+            // buttonStart
             // 
-            this.encryptButton.Location = new System.Drawing.Point(99, 415);
-            this.encryptButton.Name = "encryptButton";
-            this.encryptButton.Size = new System.Drawing.Size(94, 38);
-            this.encryptButton.TabIndex = 0;
-            this.encryptButton.Text = "encrypt";
-            this.encryptButton.UseVisualStyleBackColor = true;
-            this.encryptButton.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // decryptButton
-            // 
-            this.decryptButton.Location = new System.Drawing.Point(214, 415);
-            this.decryptButton.Name = "decryptButton";
-            this.decryptButton.Size = new System.Drawing.Size(94, 38);
-            this.decryptButton.TabIndex = 1;
-            this.decryptButton.Text = "decrypt";
-            this.decryptButton.UseVisualStyleBackColor = true;
+            this.buttonStart.Location = new System.Drawing.Point(487, 446);
+            this.buttonStart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonStart.Name = "buttonStart";
+            this.buttonStart.Size = new System.Drawing.Size(107, 51);
+            this.buttonStart.TabIndex = 0;
+            this.buttonStart.Text = "GOO.. :)";
+            this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // openFileDialog1
             // 
@@ -62,42 +67,175 @@
             // listBoxInput
             // 
             this.listBoxInput.FormattingEnabled = true;
-            this.listBoxInput.ItemHeight = 15;
-            this.listBoxInput.Location = new System.Drawing.Point(85, 146);
+            this.listBoxInput.HorizontalScrollbar = true;
+            this.listBoxInput.ItemHeight = 20;
+            this.listBoxInput.Location = new System.Drawing.Point(79, 173);
+            this.listBoxInput.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBoxInput.Name = "listBoxInput";
-            this.listBoxInput.Size = new System.Drawing.Size(270, 244);
+            this.listBoxInput.Size = new System.Drawing.Size(308, 324);
             this.listBoxInput.TabIndex = 3;
             this.listBoxInput.SelectedIndexChanged += new System.EventHandler(this.listBoxInput_SelectedIndexChanged);
             // 
             // listBoxResult
             // 
             this.listBoxResult.FormattingEnabled = true;
-            this.listBoxResult.ItemHeight = 15;
-            this.listBoxResult.Location = new System.Drawing.Point(402, 146);
+            this.listBoxResult.ItemHeight = 20;
+            this.listBoxResult.Location = new System.Drawing.Point(693, 173);
+            this.listBoxResult.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBoxResult.Name = "listBoxResult";
-            this.listBoxResult.Size = new System.Drawing.Size(270, 244);
+            this.listBoxResult.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listBoxResult.Size = new System.Drawing.Size(308, 324);
             this.listBoxResult.TabIndex = 4;
+            this.listBoxResult.SelectedIndexChanged += new System.EventHandler(this.listBoxResult_SelectedIndexChanged);
             // 
             // labelText
             // 
             this.labelText.AutoSize = true;
-            this.labelText.Location = new System.Drawing.Point(85, 87);
+            this.labelText.Font = new System.Drawing.Font("SimSun-ExtB", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelText.Location = new System.Drawing.Point(389, 22);
             this.labelText.Name = "labelText";
-            this.labelText.Size = new System.Drawing.Size(112, 15);
+            this.labelText.Size = new System.Drawing.Size(269, 40);
             this.labelText.TabIndex = 5;
-            this.labelText.Text = "ENCRYPT/DECRUPT";
+            this.labelText.Text = "Criptografia";
             this.labelText.Click += new System.EventHandler(this.labeText_Click);
+            // 
+            // comboBoxAlgo
+            // 
+            this.comboBoxAlgo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxAlgo.Items.AddRange(new object[] {
+            "RSA",
+            "Algotimo2",
+            "Algotimo3",
+            "Algotimo4"});
+            this.comboBoxAlgo.Location = new System.Drawing.Point(462, 351);
+            this.comboBoxAlgo.Name = "comboBoxAlgo";
+            this.comboBoxAlgo.Size = new System.Drawing.Size(154, 28);
+            this.comboBoxAlgo.TabIndex = 6;
+            this.comboBoxAlgo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // comboBoxED
+            // 
+            this.comboBoxED.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxED.Items.AddRange(new object[] {
+            "Encriptar",
+            "Desencriptar"});
+            this.comboBoxED.Location = new System.Drawing.Point(462, 229);
+            this.comboBoxED.Name = "comboBoxED";
+            this.comboBoxED.Size = new System.Drawing.Size(154, 28);
+            this.comboBoxED.TabIndex = 7;
+            this.comboBoxED.SelectedIndexChanged += new System.EventHandler(this.comboBoxED_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("SimSun-ExtB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(419, 184);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(239, 20);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Encriptar o Desenciptar";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("SimSun-ExtB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(419, 304);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(239, 20);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Seleccione el Algoritmo";
+            // 
+            // buttonCargar1
+            // 
+            this.buttonCargar1.Location = new System.Drawing.Point(79, 119);
+            this.buttonCargar1.Name = "buttonCargar1";
+            this.buttonCargar1.Size = new System.Drawing.Size(132, 29);
+            this.buttonCargar1.TabIndex = 10;
+            this.buttonCargar1.Text = "Cargar Xml";
+            this.buttonCargar1.UseVisualStyleBackColor = true;
+            this.buttonCargar1.Visible = false;
+            this.buttonCargar1.Click += new System.EventHandler(this.buttonCargar1_Click);
+            // 
+            // textBoxClave
+            // 
+            this.textBoxClave.Location = new System.Drawing.Point(79, 230);
+            this.textBoxClave.Name = "textBoxClave";
+            this.textBoxClave.Size = new System.Drawing.Size(308, 27);
+            this.textBoxClave.TabIndex = 12;
+            this.textBoxClave.Visible = false;
+            // 
+            // buttonCargar2
+            // 
+            this.buttonCargar2.Location = new System.Drawing.Point(229, 119);
+            this.buttonCargar2.Name = "buttonCargar2";
+            this.buttonCargar2.Size = new System.Drawing.Size(192, 29);
+            this.buttonCargar2.TabIndex = 13;
+            this.buttonCargar2.Text = "Cargar Texto Encriptado";
+            this.buttonCargar2.UseVisualStyleBackColor = true;
+            this.buttonCargar2.Visible = false;
+            this.buttonCargar2.Click += new System.EventHandler(this.buttonCargar2_Click);
+            // 
+            // textBoxTexto
+            // 
+            this.textBoxTexto.Location = new System.Drawing.Point(79, 381);
+            this.textBoxTexto.Name = "textBoxTexto";
+            this.textBoxTexto.Size = new System.Drawing.Size(308, 27);
+            this.textBoxTexto.TabIndex = 14;
+            this.textBoxTexto.Visible = false;
+            // 
+            // labelTexto
+            // 
+            this.labelTexto.AutoSize = true;
+            this.labelTexto.Location = new System.Drawing.Point(79, 351);
+            this.labelTexto.Name = "labelTexto";
+            this.labelTexto.Size = new System.Drawing.Size(48, 20);
+            this.labelTexto.TabIndex = 15;
+            this.labelTexto.Text = "Texto:";
+            this.labelTexto.Visible = false;
+            // 
+            // labelClave
+            // 
+            this.labelClave.AutoSize = true;
+            this.labelClave.Location = new System.Drawing.Point(79, 195);
+            this.labelClave.Name = "labelClave";
+            this.labelClave.Size = new System.Drawing.Size(48, 20);
+            this.labelClave.TabIndex = 16;
+            this.labelClave.Text = "Clave:";
+            this.labelClave.Visible = false;
+            // 
+            // labelToE
+            // 
+            this.labelToE.AutoSize = true;
+            this.labelToE.Location = new System.Drawing.Point(476, 535);
+            this.labelToE.Name = "labelToE";
+            this.labelToE.Size = new System.Drawing.Size(76, 20);
+            this.labelToE.TabIndex = 17;
+            this.labelToE.Text = "labelToErr";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1188, 589);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScroll = true;
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1068, 620);
+            this.Controls.Add(this.labelToE);
+            this.Controls.Add(this.labelClave);
+            this.Controls.Add(this.labelTexto);
+            this.Controls.Add(this.textBoxTexto);
+            this.Controls.Add(this.buttonCargar2);
+            this.Controls.Add(this.textBoxClave);
+            this.Controls.Add(this.buttonCargar1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBoxED);
+            this.Controls.Add(this.comboBoxAlgo);
             this.Controls.Add(this.labelText);
             this.Controls.Add(this.listBoxResult);
             this.Controls.Add(this.listBoxInput);
-            this.Controls.Add(this.decryptButton);
-            this.Controls.Add(this.encryptButton);
+            this.Controls.Add(this.buttonStart);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -107,11 +245,22 @@
 
         #endregion
 
-        private Button encryptButton;
-        private Button decryptButton;
+        private Button buttonStart;
         private OpenFileDialog openFileDialog1;
         private ListBox listBoxInput;
         private ListBox listBoxResult;
         private Label labelText;
+        private ComboBox comboBoxAlgo;
+        private ComboBox comboBoxED;
+        private Label label1;
+        private Label label2;
+        private Button buttonCargar1;
+        private TextBox textBoxClave;
+        private Button buttonCargar2;
+        private TextBox textBoxTexto;
+        private Label labelTexto;
+        private Label labelClave;
+        private Label labelToE;
+        private System.Windows.Forms.Timer timer1;
     }
 }

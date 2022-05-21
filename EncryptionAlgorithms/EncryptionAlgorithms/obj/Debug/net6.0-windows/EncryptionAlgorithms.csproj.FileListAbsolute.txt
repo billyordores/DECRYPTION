@@ -15,3 +15,20 @@ C:\Users\becario\source\repos\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debu
 C:\Users\becario\source\repos\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.pdb
 C:\Users\becario\source\repos\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.genruntimeconfig.cache
 C:\Users\becario\source\repos\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\ref\EncryptionAlgorithms.dll
+C:\Users\Billy\Documents\II\Semetre II\CRYPTOGRAFIA\Proyecto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\bin\Debug\net6.0-windows\EncryptionAlgorithms.exe
+C:\Users\Billy\Documents\II\Semetre II\CRYPTOGRAFIA\Proyecto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\bin\Debug\net6.0-windows\EncryptionAlgorithms.deps.json
+C:\Users\Billy\Documents\II\Semetre II\CRYPTOGRAFIA\Proyecto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\bin\Debug\net6.0-windows\EncryptionAlgorithms.runtimeconfig.json
+C:\Users\Billy\Documents\II\Semetre II\CRYPTOGRAFIA\Proyecto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\bin\Debug\net6.0-windows\EncryptionAlgorithms.dll
+C:\Users\Billy\Documents\II\Semetre II\CRYPTOGRAFIA\Proyecto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\bin\Debug\net6.0-windows\EncryptionAlgorithms.pdb
+C:\Users\Billy\Documents\II\Semetre II\CRYPTOGRAFIA\Proyecto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.csproj.AssemblyReference.cache
+C:\Users\Billy\Documents\II\Semetre II\CRYPTOGRAFIA\Proyecto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.Form1.resources
+C:\Users\Billy\Documents\II\Semetre II\CRYPTOGRAFIA\Proyecto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.csproj.GenerateResource.cache
+C:\Users\Billy\Documents\II\Semetre II\CRYPTOGRAFIA\Proyecto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Billy\Documents\II\Semetre II\CRYPTOGRAFIA\Proyecto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.AssemblyInfoInputs.cache
+C:\Users\Billy\Documents\II\Semetre II\CRYPTOGRAFIA\Proyecto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.AssemblyInfo.cs
+C:\Users\Billy\Documents\II\Semetre II\CRYPTOGRAFIA\Proyecto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.csproj.CoreCompileInputs.cache
+C:\Users\Billy\Documents\II\Semetre II\CRYPTOGRAFIA\Proyecto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.dll
+C:\Users\Billy\Documents\II\Semetre II\CRYPTOGRAFIA\Proyecto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\refint\EncryptionAlgorithms.dll
+C:\Users\Billy\Documents\II\Semetre II\CRYPTOGRAFIA\Proyecto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.pdb
+C:\Users\Billy\Documents\II\Semetre II\CRYPTOGRAFIA\Proyecto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.genruntimeconfig.cache
+C:\Users\Billy\Documents\II\Semetre II\CRYPTOGRAFIA\Proyecto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\ref\EncryptionAlgorithms.dll
