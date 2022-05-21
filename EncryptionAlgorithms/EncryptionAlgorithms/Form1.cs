@@ -42,7 +42,10 @@ namespace EncryptionAlgorithms
                     else 
                     {
                         RSAe rsae = new RSAe(textBoxTexto.Text);
-                        listBoxResult.Items.Add(rsae.Encrypt());
+                        listBoxResult.Items.Add("Texto encriptado: " + rsae.Encrypt());
+                        listBoxResult.Items.Add("Clave publica: " + rsae.getPublicKey());
+                        listBoxResult.Items.Add("Clave privada: " + rsae.getPrivateKey);
+
                     }
                                   
                 }

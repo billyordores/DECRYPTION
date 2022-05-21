@@ -10,6 +10,8 @@ namespace EncryptionAlgorithms
     internal class RSAe
     {
         String text;
+        byte[] PublicKey;
+        byte[] PrivateKeyTo;
         public RSAe(string text)
         {
             this.text = text;   
@@ -28,7 +30,9 @@ namespace EncryptionAlgorithms
 
                 using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
                 {
-                    encryptedData = RSAEncrypt(dataToEncrypt, RSA.ExportParameters(false), false); 
+                    encryptedData = RSAEncrypt(dataToEncrypt, RSA.ExportParameters(false), false);
+                    PublicKey = RSA.ExportRSAPublicKey();
+                    PrivateKeyTo = RSA.ExportRSAPrivateKey();
                     return Convert.ToBase64String(encryptedData);
                 }
             }
@@ -69,6 +73,12 @@ namespace EncryptionAlgorithms
                 return null;
             }
         }
-
+        public string getPublicKey() {
+            return Convert.ToBase64String(PublicKey);
+        }
+        public string getPrivateKey()
+        {
+            return Convert.ToBase64String(PrivateKeyTo);
+        }
     }
 }
