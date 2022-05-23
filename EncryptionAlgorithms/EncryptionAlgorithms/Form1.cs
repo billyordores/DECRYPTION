@@ -26,7 +26,7 @@ namespace EncryptionAlgorithms
                     using (var sr = new StreamReader(openFileDialogClave.OpenFile()))
                     {
                         XDocument doc = new XDocument();
-                        doc = XDocument.Parse(sr.ReadToEnd().Replace("&lt;", "<").Replace("&gt;", ">").Replace("+",""));
+                        doc = XDocument.Parse(sr.ReadToEnd().Replace("&lt;", "<").Replace("&gt;", ">"));
                         using (var sr2 = new StreamReader(openFileDialogTexto.OpenFile()))
                         {
                             RSAd rsa = new RSAd(doc, sr2.ReadToEnd());
@@ -52,7 +52,7 @@ namespace EncryptionAlgorithms
                             {
                                 string folderName = browserDialog.SelectedPath;
                                 FileStream fileStream = new FileStream(Path.Combine(folderName, "TextoEncriptado.txt"), FileMode.Create, FileAccess.Write);
-                                byte[] textEncrypted = Encoding.ASCII.GetBytes(rsaE.Encrypt());
+                                byte[] textEncrypted = Convert.FromBase64String(rsaE.Encrypt());
                                 fileStream.Write(textEncrypted, 0, textEncrypted.Length);
                                 fileStream.Close();
                             }

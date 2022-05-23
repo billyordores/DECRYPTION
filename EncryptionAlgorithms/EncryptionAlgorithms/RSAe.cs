@@ -35,9 +35,7 @@ namespace EncryptionAlgorithms
                 {
                     
                     encryptedData = RSAEncrypt(dataToEncrypt, RSA.ExportParameters(false), xmlPublic, false);
-                    PublicKey = RSA.ExportRSAPublicKey();
-                    PrivateKeyTo = RSA.ExportRSAPrivateKey();
-                    return Convert.ToBase64String(encryptedData);
+                    return Convert.ToBase64String(DecodeText(encryptedData));
                 }
             }
             catch (ArgumentNullException)
@@ -77,6 +75,10 @@ namespace EncryptionAlgorithms
                 return null;
             }
         }
-       
+        private static byte[] DecodeText(byte[] encodedData)
+        {
+            return Encoding.UTF8.GetBytes(Convert.ToBase64String(encodedData));
+        }
+
     }
 }

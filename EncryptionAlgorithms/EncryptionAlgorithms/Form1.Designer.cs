@@ -105,9 +105,9 @@
             this.comboBoxAlgo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAlgo.Items.AddRange(new object[] {
             "RSA",
-            "Algotimo2",
-            "Algotimo3",
-            "Algotimo4"});
+            "ECDSA",
+            "ECDH",
+            "DSA"});
             this.comboBoxAlgo.Location = new System.Drawing.Point(462, 351);
             this.comboBoxAlgo.Name = "comboBoxAlgo";
             this.comboBoxAlgo.Size = new System.Drawing.Size(154, 23);
