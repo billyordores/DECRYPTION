@@ -45,16 +45,18 @@ namespace EncryptionAlgorithms
                         using (var keyPublic = new StreamReader(openFileDialogXmlPublic.OpenFile()))
                         {
                             RSAe rsaE = new RSAe(textBoxTexto.Text, keyPublic.ReadToEnd());
-                            listBoxResult.Items.Add(rsaE.Encrypt());
+                            
                             FolderBrowserDialog browserDialog = new FolderBrowserDialog();
 
                             if (browserDialog.ShowDialog() == DialogResult.OK)
                             {
                                 string folderName = browserDialog.SelectedPath;
                                 FileStream fileStream = new FileStream(Path.Combine(folderName, "TextoEncriptado.txt"), FileMode.Create, FileAccess.Write);
-                                byte[] textEncrypted = Convert.FromBase64String(rsaE.Encrypt());
+                                string textoEncriptado = rsaE.Encrypt();
+                                byte[] textEncrypted = Encoding.ASCII.GetBytes(textoEncriptado);
                                 fileStream.Write(textEncrypted, 0, textEncrypted.Length);
                                 fileStream.Close();
+                                listBoxResult.Items.Add(textoEncriptado);
                             }
                         }
                     }

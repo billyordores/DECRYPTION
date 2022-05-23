@@ -31,7 +31,7 @@ namespace EncryptionAlgorithms
                 byte[] encryptedData;
                 byte[] decryptedData;
 
-                using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider(2048))
+                using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
                 {
                     
                     encryptedData = RSAEncrypt(dataToEncrypt, RSA.ExportParameters(false), xmlPublic, false);
