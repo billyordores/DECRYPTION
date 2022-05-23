@@ -40,13 +40,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonCargar1 = new System.Windows.Forms.Button();
-            this.textBoxClave = new System.Windows.Forms.TextBox();
             this.buttonCargar2 = new System.Windows.Forms.Button();
             this.textBoxTexto = new System.Windows.Forms.TextBox();
             this.labelTexto = new System.Windows.Forms.Label();
             this.labelClave = new System.Windows.Forms.Label();
             this.labelToE = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.buttonCreateKeys = new System.Windows.Forms.Button();
+            this.buttonSaveXmlPublic = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonStart
@@ -68,23 +69,23 @@
             // 
             this.listBoxInput.FormattingEnabled = true;
             this.listBoxInput.HorizontalScrollbar = true;
-            this.listBoxInput.ItemHeight = 20;
+            this.listBoxInput.ItemHeight = 15;
             this.listBoxInput.Location = new System.Drawing.Point(79, 173);
             this.listBoxInput.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBoxInput.Name = "listBoxInput";
-            this.listBoxInput.Size = new System.Drawing.Size(308, 324);
+            this.listBoxInput.Size = new System.Drawing.Size(308, 319);
             this.listBoxInput.TabIndex = 3;
             this.listBoxInput.SelectedIndexChanged += new System.EventHandler(this.listBoxInput_SelectedIndexChanged);
             // 
             // listBoxResult
             // 
             this.listBoxResult.FormattingEnabled = true;
-            this.listBoxResult.ItemHeight = 20;
+            this.listBoxResult.ItemHeight = 15;
             this.listBoxResult.Location = new System.Drawing.Point(693, 173);
             this.listBoxResult.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBoxResult.Name = "listBoxResult";
             this.listBoxResult.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBoxResult.Size = new System.Drawing.Size(308, 324);
+            this.listBoxResult.Size = new System.Drawing.Size(308, 319);
             this.listBoxResult.TabIndex = 4;
             this.listBoxResult.SelectedIndexChanged += new System.EventHandler(this.listBoxResult_SelectedIndexChanged);
             // 
@@ -94,7 +95,7 @@
             this.labelText.Font = new System.Drawing.Font("SimSun-ExtB", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelText.Location = new System.Drawing.Point(389, 22);
             this.labelText.Name = "labelText";
-            this.labelText.Size = new System.Drawing.Size(269, 40);
+            this.labelText.Size = new System.Drawing.Size(219, 33);
             this.labelText.TabIndex = 5;
             this.labelText.Text = "Criptografia";
             this.labelText.Click += new System.EventHandler(this.labeText_Click);
@@ -109,7 +110,7 @@
             "Algotimo4"});
             this.comboBoxAlgo.Location = new System.Drawing.Point(462, 351);
             this.comboBoxAlgo.Name = "comboBoxAlgo";
-            this.comboBoxAlgo.Size = new System.Drawing.Size(154, 28);
+            this.comboBoxAlgo.Size = new System.Drawing.Size(154, 23);
             this.comboBoxAlgo.TabIndex = 6;
             this.comboBoxAlgo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -121,7 +122,7 @@
             "Desencriptar"});
             this.comboBoxED.Location = new System.Drawing.Point(462, 229);
             this.comboBoxED.Name = "comboBoxED";
-            this.comboBoxED.Size = new System.Drawing.Size(154, 28);
+            this.comboBoxED.Size = new System.Drawing.Size(154, 23);
             this.comboBoxED.TabIndex = 7;
             this.comboBoxED.SelectedIndexChanged += new System.EventHandler(this.comboBoxED_SelectedIndexChanged);
             // 
@@ -131,7 +132,7 @@
             this.label1.Font = new System.Drawing.Font("SimSun-ExtB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(419, 184);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(239, 20);
+            this.label1.Size = new System.Drawing.Size(191, 16);
             this.label1.TabIndex = 8;
             this.label1.Text = "Encriptar o Desenciptar";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -142,7 +143,7 @@
             this.label2.Font = new System.Drawing.Font("SimSun-ExtB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(419, 304);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(239, 20);
+            this.label2.Size = new System.Drawing.Size(191, 16);
             this.label2.TabIndex = 9;
             this.label2.Text = "Seleccione el Algoritmo";
             // 
@@ -156,14 +157,6 @@
             this.buttonCargar1.UseVisualStyleBackColor = true;
             this.buttonCargar1.Visible = false;
             this.buttonCargar1.Click += new System.EventHandler(this.buttonCargar1_Click);
-            // 
-            // textBoxClave
-            // 
-            this.textBoxClave.Location = new System.Drawing.Point(79, 230);
-            this.textBoxClave.Name = "textBoxClave";
-            this.textBoxClave.Size = new System.Drawing.Size(308, 27);
-            this.textBoxClave.TabIndex = 12;
-            this.textBoxClave.Visible = false;
             // 
             // buttonCargar2
             // 
@@ -180,7 +173,7 @@
             // 
             this.textBoxTexto.Location = new System.Drawing.Point(79, 381);
             this.textBoxTexto.Name = "textBoxTexto";
-            this.textBoxTexto.Size = new System.Drawing.Size(308, 27);
+            this.textBoxTexto.Size = new System.Drawing.Size(308, 23);
             this.textBoxTexto.TabIndex = 14;
             this.textBoxTexto.Visible = false;
             // 
@@ -189,7 +182,7 @@
             this.labelTexto.AutoSize = true;
             this.labelTexto.Location = new System.Drawing.Point(79, 351);
             this.labelTexto.Name = "labelTexto";
-            this.labelTexto.Size = new System.Drawing.Size(48, 20);
+            this.labelTexto.Size = new System.Drawing.Size(38, 15);
             this.labelTexto.TabIndex = 15;
             this.labelTexto.Text = "Texto:";
             this.labelTexto.Visible = false;
@@ -199,7 +192,7 @@
             this.labelClave.AutoSize = true;
             this.labelClave.Location = new System.Drawing.Point(79, 195);
             this.labelClave.Name = "labelClave";
-            this.labelClave.Size = new System.Drawing.Size(48, 20);
+            this.labelClave.Size = new System.Drawing.Size(39, 15);
             this.labelClave.TabIndex = 16;
             this.labelClave.Text = "Clave:";
             this.labelClave.Visible = false;
@@ -209,9 +202,31 @@
             this.labelToE.AutoSize = true;
             this.labelToE.Location = new System.Drawing.Point(476, 535);
             this.labelToE.Name = "labelToE";
-            this.labelToE.Size = new System.Drawing.Size(76, 20);
+            this.labelToE.Size = new System.Drawing.Size(58, 15);
             this.labelToE.TabIndex = 17;
             this.labelToE.Text = "labelToErr";
+            // 
+            // buttonCreateKeys
+            // 
+            this.buttonCreateKeys.Location = new System.Drawing.Point(79, 229);
+            this.buttonCreateKeys.Name = "buttonCreateKeys";
+            this.buttonCreateKeys.Size = new System.Drawing.Size(132, 29);
+            this.buttonCreateKeys.TabIndex = 18;
+            this.buttonCreateKeys.Text = "Crear Claves";
+            this.buttonCreateKeys.UseVisualStyleBackColor = true;
+            this.buttonCreateKeys.Visible = false;
+            this.buttonCreateKeys.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonSaveXmlPublic
+            // 
+            this.buttonSaveXmlPublic.Location = new System.Drawing.Point(229, 229);
+            this.buttonSaveXmlPublic.Name = "buttonSaveXmlPublic";
+            this.buttonSaveXmlPublic.Size = new System.Drawing.Size(132, 29);
+            this.buttonSaveXmlPublic.TabIndex = 19;
+            this.buttonSaveXmlPublic.Text = "Cargar Xml Public";
+            this.buttonSaveXmlPublic.UseVisualStyleBackColor = true;
+            this.buttonSaveXmlPublic.Visible = false;
+            this.buttonSaveXmlPublic.Click += new System.EventHandler(this.buttonSaveXmlPublic_Click);
             // 
             // Form1
             // 
@@ -219,12 +234,13 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1068, 620);
+            this.Controls.Add(this.buttonSaveXmlPublic);
+            this.Controls.Add(this.buttonCreateKeys);
             this.Controls.Add(this.labelToE);
             this.Controls.Add(this.labelClave);
             this.Controls.Add(this.labelTexto);
             this.Controls.Add(this.textBoxTexto);
             this.Controls.Add(this.buttonCargar2);
-            this.Controls.Add(this.textBoxClave);
             this.Controls.Add(this.buttonCargar1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -255,12 +271,13 @@
         private Label label1;
         private Label label2;
         private Button buttonCargar1;
-        private TextBox textBoxClave;
         private Button buttonCargar2;
         private TextBox textBoxTexto;
         private Label labelTexto;
         private Label labelClave;
         private Label labelToE;
         private System.Windows.Forms.Timer timer1;
+        private Button buttonCreateKeys;
+        private Button buttonSaveXmlPublic;
     }
 }

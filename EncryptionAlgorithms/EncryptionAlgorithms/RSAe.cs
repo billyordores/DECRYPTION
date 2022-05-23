@@ -9,12 +9,15 @@ namespace EncryptionAlgorithms
 {
     internal class RSAe
     {
-        String text;
+        
+        string text;
+        string xmlPublic;
         byte[] PublicKey;
         byte[] PrivateKeyTo;
-        public RSAe(string text)
+        public RSAe(string text, string xmlPublic)
         {
             this.text = text;   
+            this.xmlPublic = xmlPublic;
         }
 
         public string Encrypt()
@@ -28,9 +31,10 @@ namespace EncryptionAlgorithms
                 byte[] encryptedData;
                 byte[] decryptedData;
 
-                using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
+                using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider(2048))
                 {
-                    encryptedData = RSAEncrypt(dataToEncrypt, RSA.ExportParameters(false), false);
+                    
+                    encryptedData = RSAEncrypt(dataToEncrypt, RSA.ExportParameters(false), xmlPublic, false);
                     PublicKey = RSA.ExportRSAPublicKey();
                     PrivateKeyTo = RSA.ExportRSAPrivateKey();
                     return Convert.ToBase64String(encryptedData);
@@ -44,7 +48,7 @@ namespace EncryptionAlgorithms
 
             
         }
-        public static byte[] RSAEncrypt(byte[] DataToEncrypt, RSAParameters RSAKeyInfo, bool DoOAEPPadding)
+        public static byte[] RSAEncrypt(byte[] DataToEncrypt, RSAParameters RSAKeyInfo, string xmlPublic, bool DoOAEPPadding)
         {
             try
             {
@@ -56,7 +60,7 @@ namespace EncryptionAlgorithms
                     //Import the RSA Key information. This only needs
                     //toinclude the public key information.
                     RSA.ImportParameters(RSAKeyInfo);
-
+                    RSA.FromXmlString(xmlPublic);
                     //Encrypt the passed byte array and specify OAEP padding.  
                     //OAEP padding is only available on Microsoft Windows XP or
                     //later.  
@@ -73,12 +77,6 @@ namespace EncryptionAlgorithms
                 return null;
             }
         }
-        public string getPublicKey() {
-            return Convert.ToBase64String(PublicKey);
-        }
-        public string getPrivateKey()
-        {
-            return Convert.ToBase64String(PrivateKeyTo);
-        }
+       
     }
 }

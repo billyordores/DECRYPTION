@@ -11,6 +11,7 @@ namespace EncryptionAlgorithms
     {
         public static OpenFileDialog openFileDialogClave = new OpenFileDialog();
         public static OpenFileDialog openFileDialogTexto = new OpenFileDialog();
+        public static OpenFileDialog openFileDialogXmlPublic = new OpenFileDialog();
         public Form1()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace EncryptionAlgorithms
                     using (var sr = new StreamReader(openFileDialogClave.OpenFile()))
                     {
                         XDocument doc = new XDocument();
-                        doc = XDocument.Parse(sr.ReadToEnd().Replace("&lt;", "<").Replace("&gt;", ">"));
+                        doc = XDocument.Parse(sr.ReadToEnd().Replace("&lt;", "<").Replace("&gt;", ">").Replace("+",""));
                         using (var sr2 = new StreamReader(openFileDialogTexto.OpenFile()))
                         {
                             RSAd rsa = new RSAd(doc, sr2.ReadToEnd());
@@ -40,20 +41,31 @@ namespace EncryptionAlgorithms
                         textBoxTexto.Text = "Escriba algo el texto a encriptar aquí";
                     }
                     else 
-                    {
-                        RSAe rsae = new RSAe(textBoxTexto.Text);
-                        listBoxResult.Items.Add("Texto encriptado: " + rsae.Encrypt());
-                        listBoxResult.Items.Add("Clave publica: " + rsae.getPublicKey());
-                        listBoxResult.Items.Add("Clave privada: " + rsae.getPrivateKey);
+                    {       
+                        using (var keyPublic = new StreamReader(openFileDialogXmlPublic.OpenFile()))
+                        {
+                            RSAe rsaE = new RSAe(textBoxTexto.Text, keyPublic.ReadToEnd());
+                            listBoxResult.Items.Add(rsaE.Encrypt());
+                            FolderBrowserDialog browserDialog = new FolderBrowserDialog();
 
+                            if (browserDialog.ShowDialog() == DialogResult.OK)
+                            {
+                                string folderName = browserDialog.SelectedPath;
+                                FileStream fileStream = new FileStream(Path.Combine(folderName, "TextoEncriptado.txt"), FileMode.Create, FileAccess.Write);
+                                byte[] textEncrypted = Encoding.ASCII.GetBytes(rsaE.Encrypt());
+                                fileStream.Write(textEncrypted, 0, textEncrypted.Length);
+                                fileStream.Close();
+                            }
+                        }
                     }
                                   
                 }
                 else {
                     labelToE.Text = "Error seleccione el algoritmo";
                 }
+                
             } 
-            catch (Exception E) { labelToE.Text = "Error revise bien las selecciones"; }
+            catch (Exception E) { labelToE.Text = E.Message; }
 
         }
 
@@ -91,14 +103,16 @@ namespace EncryptionAlgorithms
             }
             if (comboBoxED.Text == "Encriptar")
             {
-                textBoxClave.Visible = true;
+                buttonCreateKeys.Visible = true;
+                buttonSaveXmlPublic.Visible = true; 
                 labelTexto.Visible = true;
                 labelClave.Visible = true;
                 textBoxTexto.Visible = true;
             }
             else {
                 labelTexto.Visible = false;
-                textBoxClave.Visible= false;
+                buttonCreateKeys.Visible= false;
+                buttonSaveXmlPublic.Visible = false;
                 labelClave.Visible = false;
                 textBoxTexto.Visible = false;
             }
@@ -117,7 +131,7 @@ namespace EncryptionAlgorithms
                 using (var sr = new StreamReader(openFileDialogClave.OpenFile()))
                 {
                     XDocument doc = new XDocument();
-                    doc = XDocument.Parse(sr.ReadToEnd().Replace("&lt;", "<").Replace("&gt;", ">"));
+                    doc = XDocument.Parse(sr.ReadToEnd().Replace("&lt;", "<").Replace("&gt;", ">").Replace("  ", ""));
                     listBoxInput.Items.Add("Clave: "+ doc.ToString());
                 }                    
             }
@@ -140,6 +154,29 @@ namespace EncryptionAlgorithms
             else 
             {
                 listBoxInput.Items.Add("Clave: Se encontro un error al cargar el texto");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Keys key = new Keys();
+            key.createKeys();
+        }
+
+        private void buttonSaveXmlPublic_Click(object sender, EventArgs e)
+        {
+            openFileDialogXmlPublic.Filter = "Archivo de clave capturada (*.xml)|*.xml";
+            if (openFileDialogXmlPublic.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamReader sr = new StreamReader(openFileDialogXmlPublic.OpenFile()))
+                {
+                    listBoxResult.Items.Add("Texto Encriptado: " + sr.ReadToEnd());
+                }
+                listBoxResult.Items.Add("Clave Publica Cargada.");
+            }
+            else
+            {
+                listBoxResult.Items.Add("Clave: Se encontro un error al cargar la clave");
             }
         }
     }

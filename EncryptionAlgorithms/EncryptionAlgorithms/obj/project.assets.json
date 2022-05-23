@@ -8,19 +8,19 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Billy\\.nuget\\packages\\": {}
+    "C:\\Users\\becario\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Billy\\Documents\\II\\Semetre II\\CRYPTOGRAFIA\\Proyecto\\DECRYPTION\\EncryptionAlgorithms\\EncryptionAlgorithms\\EncryptionAlgorithms.csproj",
+      "projectUniqueName": "C:\\Users\\becario\\Documents\\git\\Cripto\\DECRYPTION\\EncryptionAlgorithms\\EncryptionAlgorithms\\EncryptionAlgorithms.csproj",
       "projectName": "EncryptionAlgorithms",
-      "projectPath": "C:\\Users\\Billy\\Documents\\II\\Semetre II\\CRYPTOGRAFIA\\Proyecto\\DECRYPTION\\EncryptionAlgorithms\\EncryptionAlgorithms\\EncryptionAlgorithms.csproj",
-      "packagesPath": "C:\\Users\\Billy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Billy\\Documents\\II\\Semetre II\\CRYPTOGRAFIA\\Proyecto\\DECRYPTION\\EncryptionAlgorithms\\EncryptionAlgorithms\\obj\\",
+      "projectPath": "C:\\Users\\becario\\Documents\\git\\Cripto\\DECRYPTION\\EncryptionAlgorithms\\EncryptionAlgorithms\\EncryptionAlgorithms.csproj",
+      "packagesPath": "C:\\Users\\becario\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\becario\\Documents\\git\\Cripto\\DECRYPTION\\EncryptionAlgorithms\\EncryptionAlgorithms\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Billy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\becario\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -63,7 +63,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

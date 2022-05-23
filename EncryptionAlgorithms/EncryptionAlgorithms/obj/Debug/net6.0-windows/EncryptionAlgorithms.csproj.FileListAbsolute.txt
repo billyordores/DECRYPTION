@@ -32,3 +32,20 @@ C:\Users\Billy\Documents\II\Semetre II\CRYPTOGRAFIA\Proyecto\DECRYPTION\Encrypti
 C:\Users\Billy\Documents\II\Semetre II\CRYPTOGRAFIA\Proyecto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.pdb
 C:\Users\Billy\Documents\II\Semetre II\CRYPTOGRAFIA\Proyecto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.genruntimeconfig.cache
 C:\Users\Billy\Documents\II\Semetre II\CRYPTOGRAFIA\Proyecto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\ref\EncryptionAlgorithms.dll
+C:\Users\becario\Documents\git\Cripto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\bin\Debug\net6.0-windows\EncryptionAlgorithms.exe
+C:\Users\becario\Documents\git\Cripto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\bin\Debug\net6.0-windows\EncryptionAlgorithms.deps.json
+C:\Users\becario\Documents\git\Cripto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\bin\Debug\net6.0-windows\EncryptionAlgorithms.runtimeconfig.json
+C:\Users\becario\Documents\git\Cripto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\bin\Debug\net6.0-windows\EncryptionAlgorithms.dll
+C:\Users\becario\Documents\git\Cripto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\bin\Debug\net6.0-windows\EncryptionAlgorithms.pdb
+C:\Users\becario\Documents\git\Cripto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.csproj.AssemblyReference.cache
+C:\Users\becario\Documents\git\Cripto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.Form1.resources
+C:\Users\becario\Documents\git\Cripto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.csproj.GenerateResource.cache
+C:\Users\becario\Documents\git\Cripto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\becario\Documents\git\Cripto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.AssemblyInfoInputs.cache
+C:\Users\becario\Documents\git\Cripto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.AssemblyInfo.cs
+C:\Users\becario\Documents\git\Cripto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.csproj.CoreCompileInputs.cache
+C:\Users\becario\Documents\git\Cripto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.dll
+C:\Users\becario\Documents\git\Cripto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\refint\EncryptionAlgorithms.dll
+C:\Users\becario\Documents\git\Cripto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.pdb
+C:\Users\becario\Documents\git\Cripto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\EncryptionAlgorithms.genruntimeconfig.cache
+C:\Users\becario\Documents\git\Cripto\DECRYPTION\EncryptionAlgorithms\EncryptionAlgorithms\obj\Debug\net6.0-windows\ref\EncryptionAlgorithms.dll
