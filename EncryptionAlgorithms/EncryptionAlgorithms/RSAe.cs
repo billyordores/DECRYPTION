@@ -27,15 +27,15 @@ namespace EncryptionAlgorithms
                 //Create a UnicodeEncoder to convert between byte array and string.
                 UnicodeEncoding ByteConverter = new UnicodeEncoding();
 
-                byte[] dataToEncrypt = ByteConverter.GetBytes(text);
+                byte[] dataToEncrypt = Encoding.UTF8.GetBytes(text);
                 byte[] encryptedData;
                 byte[] decryptedData;
 
                 using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
                 {
                     
-                    encryptedData = RSAEncrypt(dataToEncrypt, RSA.ExportParameters(false), xmlPublic, false);
-                    return Convert.ToBase64String(DecodeText(encryptedData));
+                    encryptedData = RSAEncrypt(dataToEncrypt, xmlPublic, false);
+                    return Convert.ToBase64String(DecodeTextByte(encryptedData));
                 }
             }
             catch (ArgumentNullException)
@@ -46,7 +46,7 @@ namespace EncryptionAlgorithms
 
             
         }
-        public static byte[] RSAEncrypt(byte[] DataToEncrypt, RSAParameters RSAKeyInfo, string xmlPublic, bool DoOAEPPadding)
+        public static byte[] RSAEncrypt(byte[] DataToEncrypt, string xmlPublic, bool DoOAEPPadding)
         {
             try
             {
@@ -54,14 +54,8 @@ namespace EncryptionAlgorithms
                 //Create a new instance of RSACryptoServiceProvider.
                 using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
                 {
-
-                    //Import the RSA Key information. This only needs
-                    //toinclude the public key information.
-                    RSA.ImportParameters(RSAKeyInfo);
+                    
                     RSA.FromXmlString(xmlPublic);
-                    //Encrypt the passed byte array and specify OAEP padding.  
-                    //OAEP padding is only available on Microsoft Windows XP or
-                    //later.  
                     encryptedData = RSA.Encrypt(DataToEncrypt, DoOAEPPadding);
                 }
                 return encryptedData;
@@ -75,9 +69,13 @@ namespace EncryptionAlgorithms
                 return null;
             }
         }
-        private static byte[] DecodeText(byte[] encodedData)
+        private static byte[] DecodeTextByte(byte[] encodedData)
         {
             return Encoding.UTF8.GetBytes(Convert.ToBase64String(encodedData));
+        }
+        private static string DecodeTextString(string encodedData)
+        {
+            return Encoding.UTF8.GetString(Convert.FromBase64String(encodedData));
         }
 
     }
