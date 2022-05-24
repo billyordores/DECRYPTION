@@ -31,7 +31,6 @@ namespace EncryptionAlgorithms
                         {
                             RSAd rsa = new RSAd(doc, sr2.ReadToEnd());
                             listBoxResult.Items.Add(rsa.decrypt());
-                            labelToE.Text = rsa.decrypt();
                         }
                     }
                 }
