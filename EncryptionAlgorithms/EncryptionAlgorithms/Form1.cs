@@ -31,6 +31,7 @@ namespace EncryptionAlgorithms
                         {
                             RSAd rsa = new RSAd(doc, sr2.ReadToEnd());
                             listBoxResult.Items.Add(rsa.decrypt());
+                            labelToE.Text = rsa.decrypt();
                         }
                     }
                 }
@@ -56,7 +57,7 @@ namespace EncryptionAlgorithms
                                 byte[] textEncrypted = Encoding.ASCII.GetBytes(textoEncriptado);
                                 fileStream.Write(textEncrypted, 0, textEncrypted.Length);
                                 fileStream.Close();
-                                listBoxResult.Items.Add(textoEncriptado);
+                                listBoxResult.Items.Add("Texto Encriptado: " + textoEncriptado);
                             }
                         }
                     }

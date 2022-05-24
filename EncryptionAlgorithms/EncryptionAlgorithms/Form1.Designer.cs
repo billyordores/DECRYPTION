@@ -57,7 +57,7 @@
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(107, 51);
             this.buttonStart.TabIndex = 0;
-            this.buttonStart.Text = "GOO.. :)";
+            this.buttonStart.Text = "GOO...";
             this.buttonStart.UseVisualStyleBackColor = true;
             this.buttonStart.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -93,11 +93,11 @@
             // 
             this.labelText.AutoSize = true;
             this.labelText.Font = new System.Drawing.Font("SimSun-ExtB", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelText.Location = new System.Drawing.Point(389, 22);
+            this.labelText.Location = new System.Drawing.Point(419, 24);
             this.labelText.Name = "labelText";
-            this.labelText.Size = new System.Drawing.Size(219, 33);
+            this.labelText.Size = new System.Drawing.Size(209, 33);
             this.labelText.TabIndex = 5;
-            this.labelText.Text = "Criptografia";
+            this.labelText.Text = "Criptografía";
             this.labelText.Click += new System.EventHandler(this.labeText_Click);
             // 
             // comboBoxAlgo
@@ -202,9 +202,8 @@
             this.labelToE.AutoSize = true;
             this.labelToE.Location = new System.Drawing.Point(476, 535);
             this.labelToE.Name = "labelToE";
-            this.labelToE.Size = new System.Drawing.Size(58, 15);
+            this.labelToE.Size = new System.Drawing.Size(0, 15);
             this.labelToE.TabIndex = 17;
-            this.labelToE.Text = "labelToErr";
             // 
             // buttonCreateKeys
             // 
